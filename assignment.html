@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>웹프로그래밍 과제</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1">
+    <style>
+        @media screen and (max-width: 499px) {
+            img {
+                width: 100%;
+            }
+
+            #menu-button {
+                display: block;
+                margin: 10px;
+            }
+
+            #menu {
+                display: none;
+
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+            img {
+                width: 300px;
+
+            }
+
+            #menu-button {
+                display: none;
+            }
+
+        }
+
+        #page2,
+        #page3 {
+            display: none;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var page1 = document.getElementById("page1");
+            var page2 = document.getElementById("page2");
+            var page3 = document.getElementById("page3");
+            var a1 = document.getElementById("a1");
+            var a2 = document.getElementById("a2");
+            var a3 = document.getElementById("a3");
+            var menuButton = document.getElementById("menu-button");
+            var menu = document.getElementById("menu");
+            function hideAllPages() {
+                page1.style.display = "none";
+                page2.style.display = "none";
+                page3.style.display = "none";
+
+            }
+
+            a1.onclick = function (event) {
+                event.preventDefault();
+                hideAllPages();
+                page1.style.display = "block";
+            };
+
+            a2.onclick = function (event) {
+                event.preventDefault();
+                hideAllPages();
+                page2.style.display = "block";
+            };
+
+            a3.onclick = function (event) {
+                event.preventDefault();
+                hideAllPages();
+                page3.style.display = "block";
+            };
+            menuButton.onclick = function () {
+                if (menu.style.display == "none") {
+                    menu.style.display = "block";
+                }
+                else{
+                    menu.style.display = "none";
+                }
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <button id="menu-button">메뉴</button>
+    <ul id="menu">
+        <li class="list">
+            <a href="#page1" id="a1">자기소개</a>
+        </li class="list">
+        <li>
+            <a href="#page2" id="a2">자격증</a>
+        </li>
+        <li class="list">
+            <a href="#page3" id="a3">해본일</a>
+        </li>
+    </ul>
+    <div id="page1">
+        <img src="tkwls.jpg">
+        <div>
+            <p>이름: 박현우</p>
+            <p>나이: 2002년생</p>
+            <p>거주지: 춘천</p>
+        </div>
+        <br>
+        <h3>학력</h3>
+        <p>소양초등학교 졸업</p>
+        <p>소양중학교 졸업</p>
+        <p>춘천기계공업고등학교 자동차과 졸업</p>
+        <p>강원대학교 컴퓨터공학과 재학</p>
+    </div>
+    <div id="page2">
+        <h3>지게차운전기능사</h3>
+        <p>특징: 필기를 합격한 인원들로 방과후에 학교에서 지게차운전연습을 시켜줬습니다</p>
+        <p>난이도: 필기와 실기 모두 한번에 합격했지만 지게차는 후륜조향 방식이기때문에 적응하는데 시간이 필요할 수 도 있습니다</p>
+        <h3>자동차정비기능사</h3>
+        <p>특징: 고등학교 과내에서 시험을 실시하여 실기만 봤습니다</p>
+        <p>난이도: 1명을 제외한 모든 인원이 통과하였습니다</p>
+    </div>
+    <div id="page3">
+        <h1>알바</h1>
+        <h3>편의점</h3>
+        <p>기간: 1년이상</p>
+        <p>특징: 군대가기전 오후타임, 제대후 복학때까지 새벽타임에서 근무하였습니다</p>
+        <p>업무: 시간대별, 점장님별로 업무 상이하지만 물류받기, 담배점검, 상품판매는 거의 대부분 합니다</p>
+        <p>달이 바뀌는 날에는 카드교체로 많은 시간이 소모됩니다</p>
+        <p>그만둔이유: 입대, 복학해야 하는데 새벽타임은 힘들것같아서 그만뒀습니다.</p>
+        <br>
+        <h3>음식점</h3>
+        <p>기간: 1주일</p>
+        <p>특징: 주휴수당문제로 가장 바쁜 저녁시간때만 쪼개서 일을 시켰습니다</p>
+        <p>업무: 대부분의 요리와 주방 마감</p>
+        <p>그만둔 이유: 요리과정중 손에 물이 많이 닿는데 군대에서 2주간 설거지하고 습진으로 고생했었고
+            1주일동안 일해보니 같은 위치가 가렵기시작하여 그만뒀습니다</p>
+    </div>
+</body>
+
+</html>
